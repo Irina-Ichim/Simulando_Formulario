@@ -2,7 +2,7 @@
 
 Este es un proyecto de simulación de formulario web desarrollado con HTML, CSS y JavaScript. El formulario incluye validaciones en tiempo real y mensajes de confirmación.
 
-![Diseño Formulario](img/Formulario_De_Contacto.png){height=300}
+<img src="img/Formulario_De_Contacto.png" alt="Diseño Formulario" width="300"/>
 
 ## Validaciones
 
