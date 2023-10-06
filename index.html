@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simular Formulario Real</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section class="contact" id="contact">
-        <h2 class="heading">¡Contacta <span>Conmigo!</span></h2>
-        <form
-          action="procesar_formulario.php"
-          method="POST"
-          onsubmit="return validarFormulario()"
-        >
-          <div class="input-box">
-            <input
-              type="text"
-              id="nombre"
-              placeholder="Nombre Completo"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              placeholder="Email"
-              required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            />
-          </div>
-          <div class="input-box">
-            <input
-              type="number"
-              id="telefono"
-              placeholder="Teléfono de contacto"
-            />
-            <input type="text" id="asunto" placeholder="Asunto" />
-          </div>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            cols="50"
-            rows="10"
-            placeholder="Tu mensaje"
-          ></textarea>
-          <div id="mensaje-error" class="error"></div>
-          <button type="submit" class="button">Enviar Mensaje</button>
-        </form>
-      </section>
-      <div class="modal" id="myModal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>¡Gracias por tu mensaje!</h2>
-            <p>Pronto nos pondremos en contacto contigo.</p>
+      <h2 class="heading">¡Contacta <span>Conmigo!</span></h2>
+      <form
+        action="procesar_formulario.php"
+        method="POST"
+        onsubmit="return validarFormulario()"
+      >
+        <div class="input-box">
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre Completo"
+            required
+            pattern="[A-Za-z]+"
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          />
         </div>
+        <div class="input-box">
+          <input
+            type="tel"
+            id="telefono"
+            placeholder="Teléfono de contacto"
+            pattern="[0-9]{9,}"
+            oninput="validarTelefono()"
+          />
+          <input
+            type="text"
+            id="asunto"
+            placeholder="Asunto"
+            oninput="validarAsunto()"
+          />
+          <div id="mensaje-asunto-error" class="error"></div>
+        </div>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          cols="50"
+          rows="10"
+          placeholder="Tu mensaje"
+        ></textarea>
+        <div id="mensaje-error" class="error"></div>
+        <button type="submit" class="button">Enviar Mensaje</button>
+      </form>
+    </section>
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>¡Gracias por tu mensaje!</h2>
+        <p>Pronto nos pondremos en contacto contigo.</p>
+      </div>
     </div>
-</body>
+
+    <script src="index.js"></script>
+  </body>
 </html>

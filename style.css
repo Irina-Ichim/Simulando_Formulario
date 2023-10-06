@@ -6,7 +6,11 @@
 body{
     background-color: #1f242d;
 }
-
+.error {
+    color: #ff3030; /* Color rojo para el mensaje de error */
+    font-size: 14px;
+    margin-top: 5px;
+}
 .contact {
     display: flex;
     flex-direction: column;
