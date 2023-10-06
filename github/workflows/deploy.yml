@@ -1,0 +1,35 @@
+name: Despliegue a GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # o el nombre de tu rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v2
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Construir el proyecto
+      run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Desplegar en GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build # o la carpeta donde está tu sitio compilado
