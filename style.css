@@ -6,11 +6,28 @@
 body{
     background-color: #1f242d;
 }
-.error {
-    color: #ff3030; /* Color rojo para el mensaje de error */
-    font-size: 14px;
-    margin-top: 5px;
+.modal-content {
+    margin-top: 90px;
+    width: 360px;
+    height: 120px;
+    background-color: #de43ba; 
+    color: #1f242d;
+    padding: 10px;
+    display: block; /* Asegura que el elemento sea visible */
 }
+.close{
+    color: #1f242d;
+    font-weight: bold;
+}
+
+#mensaje-confirmacion {
+    color: #1f242d; /* Color blanco */
+    background-color: #de43ba; /* Color de fondo */
+    padding: 10px;
+    display: block; /* Asegura que el elemento sea visible */
+}
+
+
 .contact {
     display: flex;
     flex-direction: column;
@@ -24,7 +41,7 @@ body{
     margin-top: 9rem;
     position: absolute;
     top: 0;
-    transform: translateX(-22%);
+    transform: translateX(-70%);
     z-index: 2;
   }
   
@@ -138,4 +155,42 @@ body{
     padding: 10px;
     text-align: center;
   }
+  .modal {
+    display: none;
+}
+
+.modal-content {
+    
+    padding: 20px;
+    text-align: center;
+}
+
+.close {
+    cursor: pointer;
+}
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1f242d;
+    color: #de43ba;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.custom-alert-content {
+    position: relative;
+}
+
+.custom-alert .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
   
