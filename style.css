@@ -6,6 +6,40 @@
 body{
     background-color: #1f242d;
 }
+nav {
+  background-color: #292f3a;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #de43ba;
+  color: #1f242d;
+}
+
+nav a.active {
+  background-color: #de43ba;
+  color: #1f242d;
+  font-weight: bold;
+}
 .modal-content {
     margin-top: 90px;
     width: 360px;
